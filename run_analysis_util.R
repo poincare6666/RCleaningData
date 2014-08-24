@@ -11,8 +11,8 @@ reading.data <- function() {
 	fileFeaturesInfo <- paste(dirName_1,"features_info.txt", sep = "")
 	fileFeatures <- paste(dirName_1, "features.txt", sep = "")
 	fileActivityLabels <- paste(dirName_1, "activity_labels.txt", sep = "")
-	features <- read.table(fileFeatures,encoding="UTF-8")
-	activityLabels <- read.table(fileActivityLabels,encoding="UTF-8")
+	features <<- read.table(fileFeatures,encoding="UTF-8")
+	activityLabels <<- read.table(fileActivityLabels,encoding="UTF-8")
 
 	## reading train data
 	file_train_y_train <- paste(dirName_train, "y_train.txt", sep = "") 
