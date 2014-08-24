@@ -10,20 +10,21 @@ print("CALCULATING MERGED DATA...")
 ## 2. processing training & test data
 print("Stage#2 - processing train data...")
 res_train <- merging_data(y_train, x_train, subject_train)
-print ("Number of rows in train data:")
-print(nrow(res_train))
+##print ("Number of rows in train data:")
+##print(nrow(res_train))
 
 print("Stage#2 - processing test data...")
 res_test <- merging_data(y_test, x_test, subject_test)
-print ("Number of rows in test data:")
-print(nrow(res_test))
+##print ("Number of rows in test data:")
+##print(nrow(res_test))
 
 ## 3. joining train and test data together
+print("Stage#3 - combinging data and storing them in a file...")
 merged.tables <- rbind(res_train, res_test)
-print ("Number of rows in combined data:")
-print(nrow(merged.tables))
+##print ("Number of rows in combined data:")
+##print(nrow(merged.tables))
 
-## 4. writing merged data to a file
+## writing merged data to a file
 data.file <- "merged_data.txt"
 if (file.exists(data.file)) {
 	file.remove(data.file)
@@ -47,9 +48,10 @@ avg_test <- avg_data(y_test, subject_test,
 	total_acc_x_test, total_acc_y_test, total_acc_z_test)
 
 ## 3. joining train and test data together
+print("Stage#3 - combinging data and storing them in a file...")
 merged.avg.tables <- rbind(avg_train, avg_test)
-print ("Number of rows in combined data:")
-print(nrow(merged.avg.tables))
+##print ("Number of rows in combined data:")
+##print(nrow(merged.avg.tables))
 
 ## writing merged data to a file
 data.file <- "avg_data.txt"
